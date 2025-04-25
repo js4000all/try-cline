@@ -1,0 +1,7 @@
+services:
+  dev:
+    image: alpine
+    volumes:
+      - ./work:/usr/src
+    command: sleep infinity
+    

@@ -1,0 +1,14 @@
+{
+    "name": "devcon-exam-cline",
+    "dockerComposeFile": "../compose.yaml",
+    "service": "dev",
+    "workspaceFolder": "/usr/src",
+    "customizations": {
+        "vscode": {
+            "extensions":[
+                "CoolCline.coolcline",
+				"GitHub.vscode-pull-request-github"
+            ]
+        }
+    }
+}
