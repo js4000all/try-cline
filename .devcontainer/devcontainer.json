@@ -16,9 +16,9 @@
             ],
             "settings": {
                 "editor.formatOnSave": true,
-                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "editor.defaultFormatter": "vscode.typescript-language-features",
                 "editor.codeActionsOnSave": {
-                    "source.fixAll.eslint": true
+                    "source.fixAll.eslint": "explicit"
                 },
                 "typescript.tsdk": "node_modules/typescript/lib",
                 "typescript.enablePromptUseWorkspaceTsdk": true,
