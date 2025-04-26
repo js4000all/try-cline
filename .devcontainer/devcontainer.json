@@ -6,7 +6,7 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "CoolCline.coolcline",
+                "saoudrizwan.claude-dev",
                 "GitHub.vscode-pull-request-github",
                 "dbaeumer.vscode-eslint",
                 "esbenp.prettier-vscode",
