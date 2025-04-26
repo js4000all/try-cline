@@ -37,10 +37,3 @@ COPY ./profile.d /etc/profile.d
 
 # 作業ディレクトリの設定
 WORKDIR /usr/src/app
-
-# 開発ユーザーの作成
-RUN useradd -m -s /bin/bash dev \
-  && chown -R dev:dev /usr/src/app
-
-# 開発ユーザーに切り替え
-USER dev
