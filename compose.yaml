@@ -3,5 +3,7 @@ services:
     image: alpine
     volumes:
       - ./work:/usr/src
+    env_file:
+      - .env
     command: sleep infinity
     

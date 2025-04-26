@@ -23,6 +23,8 @@ docker compose down
 docker compose up -d
 ```
 
+> 注意：環境変数は`.env`ファイルに記述するだけでなく、`compose.yaml`の`env_file`設定でコンテナに渡されますえ。
+
 ### 開発環境の起動
 1. Docker環境を起動します：
 ```bash
