@@ -1,6 +1,8 @@
 services:
   dev:
-    image: alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - ./work:/usr/src
     env_file:
