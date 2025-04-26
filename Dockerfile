@@ -1,14 +1,13 @@
-FROM node:22-alpine
+FROM node:22-slim
 
 # 開発ツールのインストール
 RUN set -x \
-  && apk update --no-cache \
-  && apk upgrade --no-cache \
-  && apk add --no-cache \
+  && apt-get update \
+  && apt-get upgrade -y \
+  && apt-get install -y \
     git \
     curl \
     vim \
-    bash \
     make \
     g++ \
     python3 \
@@ -40,7 +39,7 @@ COPY ./profile.d /etc/profile.d
 WORKDIR /usr/src/app
 
 # 開発ユーザーの作成
-RUN adduser -D -h /home/dev dev \
+RUN useradd -m -s /bin/bash dev \
   && chown -R dev:dev /usr/src/app
 
 # 開発ユーザーに切り替え
