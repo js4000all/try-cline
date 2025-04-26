@@ -4,20 +4,18 @@ FROM node:22-alpine
 RUN set -x \
   && apk update \
   && apk upgrade \
-  && apk add git curl vim
+  && apk add git curl vim \
+  && npm install -g typescript ts-node @types/node
+  
+# プロファイル設定のコピー
+COPY ./profile.d /etc/profile.d
 
 # 作業ディレクトリの設定
 WORKDIR /usr/src/app
 
-# プロファイル設定のコピー
-COPY ./profile.d /etc/profile.d
+# 開発ユーザーの作成
+RUN adduser -D -h /home/dev dev \
+  && chown -R dev:dev /usr/src/app
 
-# TypeScript開発環境のセットアップ
-RUN npm install -g typescript ts-node @types/node
-
-# 開発環境の初期化
-RUN npm init -y
-
-# 必要なパッケージのインストール
-RUN npm install express @types/express
-RUN npm install --save-dev nodemon
+# 開発ユーザーに切り替え
+USER dev
